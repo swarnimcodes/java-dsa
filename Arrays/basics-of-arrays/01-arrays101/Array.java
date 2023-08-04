@@ -12,14 +12,13 @@ public class Array {
 
         // we can create arrays of various data types
 
-        byte byteArray[]; // Array of byte numbers
+        /*byte byteArray[]; // Array of byte numbers
         short shortsArray[];
         boolean booleanArray[];
         long longArray[];
         float floatArray[];
         double doubleArray[];
-        char charArray[];
-
+        char charArray[]; */
         // // an array can reference to objects in a class created by us
 
         // MyClass myClassArray[];
