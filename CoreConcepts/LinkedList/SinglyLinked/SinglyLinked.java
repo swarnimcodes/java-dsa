@@ -1,3 +1,5 @@
+package CoreConcepts.LinkedList.SinglyLinked;
+
 public class SinglyLinked {
     private Node head;
     private int size;

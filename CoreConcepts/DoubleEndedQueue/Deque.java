@@ -1,3 +1,4 @@
+package CoreConcepts.DoubleEndedQueue;
 
 public class Deque {
     private Node head;
