@@ -38,14 +38,12 @@ public class Deque {
         if (size == 0) {
             head = newNode;
             tail = newNode;
-            size++;
-            return;
         } else {
             tail.next = newNode;
             newNode.prev = tail;
             tail = newNode;
-            size++;
         }
+        size++;
     }
 
     // add elem at the start
@@ -55,32 +53,45 @@ public class Deque {
         if (size == 0) {
             head = newNode;
             tail = newNode;
-            size++;
-            return;
+        } else {
+            newNode.next = head;
+            head = newNode;
+            head.prev = null;
         }
-        newNode.next = head;
-        head = newNode;
         size++;
-        return;
     }
 
-    public void pollLast() {
+    public int pollLast() {
         if (size == 0) {
-            return;
+            throw new IllegalStateException("Deque is empty");
+        }
+        int val = tail.val;
+        if (size == 1) {
+            head = null;
+            tail = null;
         } else {
             tail = tail.prev;
             tail.next = null;
-            size--;
         }
+
+        size--;
+        return val;
     }
 
-    public void pollFirst() {
+    public int pollFirst() {
         if (size == 0) {
-            return;
+            throw new IllegalStateException("Deque is empty");
         }
-        head = head.next;
-        head.prev = null;
+        int val = head.val;
+        if (size == 1) {
+            head = null;
+            tail = null;
+        } else {
+            head = head.next;
+            head.prev = null;
+        }
         size--;
+        return val;
     }
 
     public int peekLast() {
@@ -95,6 +106,13 @@ public class Deque {
             throw new IllegalStateException("Deque is empty");
         }
         return head.val;
+    }
+
+    // Clear the deque
+    public void clear() {
+        head = null;
+        tail = null;
+        size = 0;
     }
 
     public Deque() {
