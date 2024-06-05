@@ -1,5 +1,5 @@
 public class Quicksort {
-    
+    // average case time complexity: O(nlogn)
     private static int partition(int[] arr, int l, int h) {
         int pivot = arr[h];
         int i = l - 1;
