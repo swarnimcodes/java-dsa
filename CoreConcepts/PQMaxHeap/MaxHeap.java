@@ -1,9 +1,11 @@
 import java.util.Collections;
 import java.util.PriorityQueue;
+import java.util.ArrayList;
 
 public class MaxHeap {
   public static void main(String[] args) {
     PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+    ArrayList<Integer> arr = new ArrayList<>();
     maxHeap.add(3);
     maxHeap.add(10);
     maxHeap.add(5);
